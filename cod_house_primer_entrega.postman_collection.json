@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "28ede1cc-c006-487a-8fa5-98e1a5f637bf",
+		"name": "cod_house_primer_entrega",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20569869"
+	},
+	"item": [
+		{
+			"name": "CART",
+			"item": [
+				{
+					"name": "cart (create)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/1.0/cart/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"1.0",
+								"cart",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cart (:cid/product/:pid)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/1.0/cart/1728333015769/product/1728265625098",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"1.0",
+								"cart",
+								"1728333015769",
+								"product",
+								"1728265625098"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cart (/:cid)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/1.0/cart/show/1728333015769",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"1.0",
+								"cart",
+								"show",
+								"1728333015769"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PRODUCT",
+			"item": [
+				{
+					"name": "product (show/:pid)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"title\": \"producto1\",\r\n    \"description\": \"descripcion 1\",\r\n    \"code\": \"CODE1\",\r\n    \"price\": 1000,\r\n    \"stock\": 1,\r\n    \"category\": \"category\",\r\n    \"thumbnails\": [\"path1\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/1.0/product/show/1728265840413",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"1.0",
+								"product",
+								"show",
+								"1728265840413"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product (list?limit=number)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"title\": \"producto1\",\r\n    \"description\": \"descripcion 1\",\r\n    \"code\": \"CODE1\",\r\n    \"price\": 1000,\r\n    \"stock\": 1,\r\n    \"category\": \"category\",\r\n    \"thumbnails\": [\"path1\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/1.0/product/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"1.0",
+								"product",
+								"list"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product (create)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"title\": \"producto1\",\r\n    \"description\": \"descripcion 1\",\r\n    \"code\": \"CODE1\",\r\n    \"price\": 1000,\r\n    \"stock\": 1,\r\n    \"category\": \"category\",\r\n    \"thumbnails\": [\"path1\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/1.0/product/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"1.0",
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product (update/:pid)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"producto1\",\r\n    \"description\": \"descripcion 1\",\r\n    \"code\": \"EDITEDCODE\",\r\n    \"price\": 1000,\r\n    \"status\": true,\r\n    \"stock\": 1,\r\n    \"category\": \"category\",\r\n    \"thumbnails\": [\r\n        \"path1\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/1.0/product/update/1728265840413",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"1.0",
+								"product",
+								"update",
+								"1728265840413"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product (delete/:pid)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"producto1\",\r\n    \"description\": \"descripcion 1\",\r\n    \"code\": \"CODE1\",\r\n    \"price\": 1000,\r\n    \"status\": true,\r\n    \"stock\": 1,\r\n    \"category\": \"category\",\r\n    \"thumbnails\": [\r\n        \"path1\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/1.0/product/delete/1728265840413",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"1.0",
+								"product",
+								"delete",
+								"1728265840413"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
