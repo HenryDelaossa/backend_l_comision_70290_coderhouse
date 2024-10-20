@@ -1,5 +1,6 @@
 const path = require("path");
 const { readDataFile, writeDataFile } = require("../helpers/fileSystem");
+const { emitProducts } = require("./socket.service");
 
 const dataFilePathProducts = path.join(__dirname, "../data/products.json");
 
@@ -19,7 +20,11 @@ exports.createProduct = (productData) => {
   const products = readDataFile(dataFilePathProducts);
   const newProduct = { id: Date.now().toString(), ...productData };
   products.push(newProduct);
+
   writeDataFile(dataFilePathProducts, products);
+
+  emitProducts(products);
+
   return newProduct;
 };
 
@@ -30,6 +35,7 @@ exports.updateProduct = (id, productData) => {
   if (index !== -1) {
     products[index] = { id, ...productData };
     writeDataFile(dataFilePathProducts, products);
+    emitProducts(products);
     return products[index];
   }
   return null;
@@ -42,6 +48,7 @@ exports.deleteProduct = (id) => {
   if (index !== -1) {
     products = products.filter((p) => p.id !== id);
     writeDataFile(dataFilePathProducts, products);
+    emitProducts(products);
     return true;
   }
   return null;
